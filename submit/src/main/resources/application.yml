@@ -14,3 +14,9 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+
+auth:
+  jwt:
+    secret: MyBwZW9wbGUgY2x1YiBtZW1iZXIgcmV0cm9zcGVjdGl2ZSB3cml0aW5nIHByb2plY3QgcHJvZ3Jlc3MgcHJvamVjdCBuYW1lIG1lbW9pcg
+    exp:
+      access: 3600

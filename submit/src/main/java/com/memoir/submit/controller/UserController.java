@@ -1,6 +1,8 @@
 package com.memoir.submit.controller;
 
-import com.memoir.submit.dto.SignupRequest;
+import com.memoir.submit.dto.request.LoginRequest;
+import com.memoir.submit.dto.request.SignupRequest;
+import com.memoir.submit.dto.response.TokenResponse;
 import com.memoir.submit.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,5 +25,10 @@ public class UserController {
     @PostMapping("/signup")
     public void signup(@RequestBody @Valid SignupRequest request) {
         userService.signup(request);
+    }
+
+    @PostMapping("/login")
+    public TokenResponse login(@RequestBody @Valid LoginRequest request) {
+        return userService.login(request);
     }
 }

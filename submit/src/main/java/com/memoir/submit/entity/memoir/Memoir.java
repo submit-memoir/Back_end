@@ -1,6 +1,6 @@
 package com.memoir.submit.entity.memoir;
 
-import com.memoir.submit.entity.User;
+import com.memoir.submit.entity.user.User;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,21 +27,18 @@ public class Memoir {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
     @Column(length = 30)
     private String title;
 
     @Column(length = 50)
     private String goal;
 
-    @NotNull
     @Column(length = 3000)
     private String learned;
 
     @Column(length = 100)
     private String felt;
 
-    @NotNull
     @Column(length = 50, name = "next_goal")
     private String next_goal;
 

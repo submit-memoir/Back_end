@@ -1,6 +1,5 @@
 package com.memoir.submit.exception.handler;
 
-import com.memoir.submit.exception.response.ErrorResponse;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;

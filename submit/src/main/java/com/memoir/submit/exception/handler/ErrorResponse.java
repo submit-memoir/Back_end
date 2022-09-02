@@ -1,4 +1,4 @@
-package com.memoir.submit.exception.response;
+package com.memoir.submit.exception.handler;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
