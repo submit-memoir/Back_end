@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 
         String password = user.getPassword();
 
-        if(!passwordEncoder.matches(password, user.getPassword()))
+        if(passwordEncoder.matches(password, request.getPassword()))
             throw PasswordNotMatchException.EXCEPTION;
 
         return TokenResponse.builder()
