@@ -16,9 +16,10 @@ public class MemoirExceptionFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(request, response);
         } catch (MemoirException e) {
+            ErrorResponse errorResponse = new ErrorResponse(e.getStatus(), e.getMessage());
             response.setStatus(e.getStatus());
             response.setContentType("application/json");
-            response.getWriter().println(new ErrorResponse(e.getStatus(), e.getMessage()));
+            response.getWriter().write(errorResponse.toString());
         }
     }
 }
