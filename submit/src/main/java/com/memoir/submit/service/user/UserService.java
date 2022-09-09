@@ -1,4 +1,4 @@
-package com.memoir.submit.service;
+package com.memoir.submit.service.user;
 
 import com.memoir.submit.dto.request.LoginRequest;
 import com.memoir.submit.dto.request.SignupRequest;

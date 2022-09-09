@@ -3,7 +3,7 @@ package com.memoir.submit.controller;
 import com.memoir.submit.dto.request.LoginRequest;
 import com.memoir.submit.dto.request.SignupRequest;
 import com.memoir.submit.dto.response.TokenResponse;
-import com.memoir.submit.service.UserService;
+import com.memoir.submit.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;

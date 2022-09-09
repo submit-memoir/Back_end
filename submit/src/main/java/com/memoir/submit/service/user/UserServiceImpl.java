@@ -1,4 +1,4 @@
-package com.memoir.submit.service;
+package com.memoir.submit.service.user;
 
 import com.memoir.submit.dto.request.LoginRequest;
 import com.memoir.submit.dto.request.SignupRequest;
@@ -8,6 +8,7 @@ import com.memoir.submit.entity.user.UserRepository;
 import com.memoir.submit.exception.PasswordNotMatchException;
 import com.memoir.submit.exception.UserNotFoundException;
 import com.memoir.submit.security.jwt.JwtTokenProvider;
+import com.memoir.submit.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

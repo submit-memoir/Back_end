@@ -1,14 +1,16 @@
 package com.memoir.submit.dto.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 
 @Getter
+@AllArgsConstructor
 public class WriteRequest {
 
-    @NotBlank(message = "아이디를 작성하세요.")
+    @NotBlank(message = "제목을 작성하세요.")
     @Length(min = 1, max = 30)
     private String title;
 
