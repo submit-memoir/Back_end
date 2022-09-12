@@ -10,18 +10,15 @@ import com.memoir.submit.entity.user.User;
 import com.memoir.submit.entity.user.UserRepository;
 import com.memoir.submit.exception.MemoirNotFoundException;
 import com.memoir.submit.exception.UserNotAuthenticatedException;
-import com.memoir.submit.service.memoir.MemoirService;
 import com.memoir.submit.util.AuthenticationUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Transactional
 @Service
 public class MemoirServiceImpl implements MemoirService {
 
@@ -31,6 +28,8 @@ public class MemoirServiceImpl implements MemoirService {
     @Override
     public WriteResponse write(WriteRequest request) {
 
+/*        String user = userRepository.findNicknameById(userInfo().getId());*/
+
         return new WriteResponse(memoirRepository.save(Memoir.builder()
                 .title(request.getTitle())
                 .goal(request.getGoal())
@@ -38,6 +37,7 @@ public class MemoirServiceImpl implements MemoirService {
                 .felt(request.getFelt())
                 .next_goal(request.getNextGoal())
                 .created_at(LocalDateTime.now())
+                .nickName(userInfo().getNickname())
                 .user(userInfo())
                 .build()
         ).getId());
@@ -55,18 +55,22 @@ public class MemoirServiceImpl implements MemoirService {
         Memoir memoir = memoirRepository.findById(id)
                 .orElseThrow(()-> MemoirNotFoundException.EXCEPTION);
 
+        /*User nickname = userRepository.findNicknameById(memoir.getUser());*/
+
         MemoirDetailResponse response = MemoirDetailResponse.builder()
-                .nickname(userInfo().getNickname())
+                .id(memoir.getId())
                 .date(memoir.getCreated_at())
                 .title(memoir.getTitle())
                 .goal(memoir.getGoal())
                 .learned(memoir.getLearned())
                 .felt(memoir.getFelt())
                 .nextGoal(memoir.getNext_goal())
+                .nickname(memoir.getNickName())
                 .build();
 
         return response;
     }
+
 
     public User userInfo() {
         return AuthenticationUtil.getUserInfo()

@@ -1,5 +1,6 @@
 package com.memoir.submit.dto.response;
 
+import com.memoir.submit.entity.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,6 +11,8 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 public class MemoirDetailResponse {
+
+    Long id;
 
     String nickname;
 

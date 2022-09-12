@@ -47,6 +47,8 @@ public class Memoir {
     @ManyToOne
     private User user;
 
+    private String nickName;
+
     @LastModifiedDate
     private LocalDateTime created_at;
 }
