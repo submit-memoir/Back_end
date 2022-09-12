@@ -19,7 +19,7 @@ import java.util.Date;
 @Component
 public class JwtTokenProvider {
 
-    @Value("MyBwZW9wbGUgY2x1YiBtZW1iZXIgcmV0cm9zcGVjdGl2ZSB3cml0aW5nIHByb2plY3QgcHJvZ3Jlc3MgcHJvamVjdCBuYW1lIG1lbW9pcg")
+    @Value("${auth.jwt.secret}")
     private String secretKey;
 
     private static final String HEADER = "Authorization";
