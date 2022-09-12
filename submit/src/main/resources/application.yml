@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/submit?characterEncoding-UTF-8
-    username: root
-    password: hkokim0309
+    username: ${USER_NAME}
+    password: ${PASSWORD}
 
   jpa:
     database: mysql
@@ -17,6 +17,6 @@ spring:
 
 auth:
   jwt:
-    secret: MyBwZW9wbGUgY2x1YiBtZW1iZXIgcmV0cm9zcGVjdGl2ZSB3cml0aW5nIHByb2plY3QgcHJvZ3Jlc3MgcHJvamVjdCBuYW1lIG1lbW9pcg
+    secret: ${SECRETKEY}
     exp:
       access: 3600
